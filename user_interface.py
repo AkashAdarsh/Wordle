@@ -1,5 +1,5 @@
 def get_input_from_user(trial):
-    prompt_message = 'Enter a word: ' if trial > 5 else 'Reenter a word: '
+    prompt_message = 'Enter a word: ' if trial < 2 else 'Reenter a word: '
     return input(prompt_message)
 
 
