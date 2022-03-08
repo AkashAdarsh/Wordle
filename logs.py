@@ -19,7 +19,6 @@ def order(trials, user_input):  # function for making file for storing in csv
     for letter in alphabets:
         letter_dictionary[letter] = [0, 0, 0, 0, 0]  # each index frequency
     while trials > 0:
-        user_input = input('Enter a word: ')  # of each trial
         for index in range(len(user_input)):
             temp = letter_dictionary[user_input[index]]
             index = index + 1
@@ -33,6 +32,9 @@ def order(trials, user_input):  # function for making file for storing in csv
         writer.writeheader()
         writer.writerows(letter_dictionary)             #row output
 
+
+# Converting into list of tuple
+    list = list(letter_dictionary.items())
 
 if __name__ == "__main__":
     order()
