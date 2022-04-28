@@ -2,6 +2,8 @@ from user_interface import *
 from dictionary import Dictionary
 from statistics import *
 from logs import *
+import db
+import analyse
 
 
 class Wordle:  # class for wordle
@@ -55,6 +57,9 @@ class Wordle:  # class for wordle
 
 if __name__ == "__main__":
     dictionary = Dictionary()  # calling  dictioary class
+    db.truncateWordle()
+    db.queryWordle()
+    db.calcStats()
     CODEWORD = dictionary.get_random_word()  # calling random word from dictionary
     Dictionary.add_word_to_used_list(CODEWORD)  # adding used word so that word does not repeat
     log_to_file('info', 'The selected word is "%s"' % CODEWORD)  # logging
